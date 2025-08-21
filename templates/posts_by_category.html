@@ -1,0 +1,31 @@
+
+{% extends '.base/base.html' %}
+{% block content %}
+<!-- Recent Articles -->
+
+<h3 class="text-uppercase text-warning" style="letter-spacing: 2px;">{{ category }}</h3>
+  <main role="main" class="container p-0">
+    <div class="row">
+      <div class="col-md-8 blog-main">
+       {% for post in posts %} 
+      <div class="card border-0" >
+        <div class="card-body">
+          <h3><a href="{% url 'blogs' post.slug %}">{{ post.title }}</a></h3>
+          <small class="mb-1 text-muted">{{ post.created_at | timesince }} ago | {{ post.author }}</small>
+          <p class="card-text">{{ post.short_description | truncatewords:20 }}</p>
+        </div>
+      </div>
+      {% endfor %}
+        <!-- /.blog-post -->
+
+      </div>
+      <!-- /.blog-main -->
+
+      
+
+    </div><!-- /.row -->
+
+  </main><!-- /.container -->
+
+{% endblock %}
+    
