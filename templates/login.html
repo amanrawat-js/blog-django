@@ -1,8 +1,8 @@
-{% extends ./base/base.html %}
+{% extends './base/base.html' %}
 
 {% block content %}
-{%% load crispy_forms_tags %}
-<form action="{% url 'login' %}" method="POST" style="height:600px; width:400px; margin: auto;">
+{% load crispy_forms_tags %}
+<form action="{% url 'login' %}" method="POST" style="height:300px; width:400px; margin: auto;">
 {% csrf_token %}
 {{ form | crispy }}
 <input type="submit" name="Login" class="btn btn-warning">

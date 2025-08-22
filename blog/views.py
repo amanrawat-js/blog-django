@@ -1,7 +1,7 @@
 from django.shortcuts import render, redirect
 from blogs.models import Category, Blogs
 from .forms import RegistrationForm
-from django.contrib import authenticate
+# from django.contrib import authenticate
 from django.contrib import auth
 from django.contrib.auth.forms import AuthenticationForm
 
