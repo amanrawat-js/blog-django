@@ -59,7 +59,7 @@ def delete_categories(request, pk):
 
 
 def posts(request):
-  posts = Blogs.object.all()
+  posts = Blogs.objects.all()
   context = {
     'posts':posts
   }
@@ -71,16 +71,36 @@ def add_posts(request):
     form = BlogPostForm(request.POST, request.FILES)
     if form.is_valid():
       post = form.save(commit=False)
-      post.author = request.User
-      post.save()
+      post.author = request.user
       title = form.cleaned_data['title']
       post.slug = slugify(title)
+      post.save()      
+      print(post.status)
       return redirect('posts')
   form = BlogPostForm()
   context = {
     'form':form
   }
   return render(request, 'dashboard/add_posts.html', context)
+
+def edit_posts(request, pk):
+    post = get_object_or_404(Blogs, pk=pk)
+    if request.method == 'POST':
+        form = BlogPostForm(request.POST, request.FILES, instance=post)
+        if form.is_valid():
+            edited_post = form.save(commit=False)
+            title = form.cleaned_data['title']
+            edited_post.slug = slugify(title)
+            edited_post.save()
+            return redirect('posts')
+    else:
+        form = BlogPostForm(instance=post)
+
+    context = {
+        'form': form,
+        'post': post
+    }
+    return render(request, 'dashboard/edit_posts.html', context)
 
 
 def delete_posts(request, pk):

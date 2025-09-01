@@ -1,0 +1,7 @@
+      <div class="nav-scroller py-1 mb-2">
+        <nav class="nav d-flex justify-content-between">
+          {% for cat in categories %}
+          <a class="p-2 text-muted nav-link {% if request.resolver_match.url_name == 'posts_by_category' and cat.id|stringformat:'s' in request.get_full_path %}active{% endif %}" href="{% url 'posts_by_category' cat.id %}">{{ cat.category_name }}</a>
+          {% endfor %}
+        </nav>
+      </div>

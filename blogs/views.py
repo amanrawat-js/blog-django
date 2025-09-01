@@ -1,4 +1,4 @@
-from django.shortcuts import render, redirect, get_object_or_404, HttpResponse
+from django.shortcuts import render, get_object_or_404
 from . models import Blogs, Category, Comment
 from django.db.models import Q
 from django.http import HttpResponseRedirect
@@ -45,9 +45,17 @@ def blogs(request, slug):
 # search-------------------->
 
 def search(request):
-    keyword= request.GET.get('keyword')
-    blog = Blogs.objects.filter(Q(title__icontains=keyword) | Q(short_description__icontains=keyword) | Q(blog_body__icontains=keyword), status='published')
-    content = {
-        'blogs':blogs
+    keyword = request.GET.get('keyword')
+    blogs = None
+    if keyword:
+        blogs = Blogs.objects.filter(
+            Q(title__icontains=keyword) | 
+            Q(short_description__icontains=keyword) | 
+            Q(blog_body__icontains=keyword),
+            status='published'
+        )
+    context = {
+        'blogs': blogs,
+        'keyword': keyword,
     }
-    return render(request, 'search.html', content)
+    return render(request, 'search.html', context)

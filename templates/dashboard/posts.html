@@ -1,14 +1,14 @@
-{% extends '..base/base.html' %}
+{% extends '../base/base.html' %}
 
 {% block content %}
-<div class="row">
+<div class="row" style="margin-top: 14px; height: max-content;">
   <!-- left sidebar -->
   <!-- load left sidebar -->
   {% include './leftsidebar.html' %}
 
   <!-- right sidebad -->
    <div class="col-md-9">
-    <h3>All Posts</h3>
+    <h3 style="display: inline-block;">All Posts</h3>
     <a href="{% url 'add_posts' %}" class="btn btn-warning text-dark float-right mb-2">Add New Post</a>
     <table class="table table-hover">
       <thead>
@@ -32,8 +32,8 @@
       <td>{{ post.status }}</td>
       <td>{% if post.is_featured %}<i class="fa fa-check text-success"></i>{% else %}<i class="fa fa-times text-danger"></i>{% endif %}</td>
       <td>
-        <a href="{% url 'edit_posts' cat.id %}"><i class="fa fa-edit text-success"></i></a> &nbsp;&nbsp;
-        <a href="{% url 'delete_posts' cat.id %}"><i class="fa fa-trash text-danger"></i></a> 
+        <a href="{% url 'edit_posts' post.id %}"><i class="fa fa-edit text-success"></i></a> &nbsp;&nbsp;
+        <a href="{% url 'delete_posts' post.id %}"><i class="fa fa-trash text-danger"></i></a> 
       </td>
     </tr> 
     {% endfor %}
@@ -41,5 +41,4 @@
    </table>
     </div>
    </div>
-</div>
 {% endblock %}

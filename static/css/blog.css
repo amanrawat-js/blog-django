@@ -1,20 +1,32 @@
-/* stylelint-disable selector-list-comma-newline-after */
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300..700;1,300..700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Merriweather:ital,opsz,wght@0,18..144,300..900;1,18..144,300..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap');
 
 .blog-header {
   border-bottom: 1px solid #e5e5e5;
 }
 
 .blog-header-logo {
-  font-family: "Playfair Display", Georgia, "Times New Roman", serif/*rtl:Amiri, Georgia, "Times New Roman", serif*/;
+  font-family: "Libre Baskerville", Georgia, "Times New Roman",
+    serif /*rtl:Amiri, Georgia, "Times New Roman", serif*/;
   font-size: 2.25rem;
+  font-weight: bold;
 }
 
 .blog-header-logo:hover {
   text-decoration: none;
 }
 
-h1, h2, h3, h4, h5, h6 {
-  font-family: "Playfair Display", Georgia, "Times New Roman", serif/*rtl:Amiri, Georgia, "Times New Roman", serif*/;
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Libre Baskerville", Georgia, "Times New Roman",
+    serif /*rtl:Amiri, Georgia, "Times New Roman", serif*/;
 }
 
 .display-4 {
@@ -30,9 +42,13 @@ h1, h2, h3, h4, h5, h6 {
   flex: 0 0 auto;
 }
 
-.h-250 { height: 250px; }
+.h-250 {
+  height: 250px;
+}
 @media (min-width: 768px) {
-  .h-md-250 { height: 250px; }
+  .h-md-250 {
+    height: 250px;
+  }
 }
 
 /* Pagination */
@@ -57,13 +73,818 @@ h1, h2, h3, h4, h5, h6 {
 /*
  * Footer
  */
+
 .blog-footer {
   padding: 2.5rem 0;
   color: #727272;
-  text-align: center;
   background-color: #f9f9f9;
   border-top: .05rem solid #e5e5e5;
 }
 .blog-footer p:last-child {
   margin-bottom: 0;
+}
+
+.footer-brand {
+  color: #000000;
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+  text-decoration: none;
+}
+
+.footer-brand:hover {
+  color: #e9ecef;
+  text-decoration: none;
+}
+
+.social-links {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
+
+.social-link {
+  color: #232527;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem;
+  border-radius: 0.375rem;
+  transition: all 0.2s ease;
+}
+
+.social-link:hover {
+  color: #ffffff;
+  background-color: #495057;
+  text-decoration: none;
+}
+
+.social-link i {
+  font-size: 1.2rem;
+}
+
+.footer-text {
+  margin-bottom: 0;
+  font-size: 0.9rem;
+}
+
+@media (max-width: 768px) {
+  .footer-content {
+    text-align: center;
+  }
+
+  .social-links {
+    justify-content: center;
+    margin-top: 1rem;
+  }
+}
+
+/* NAV - LINKS  */
+
+.nav-link {
+    position: relative;
+    color: #6c757d !important;
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+    transition: all 0.3s ease;
+}
+
+.nav-link:hover {
+    color: #495057 !important;
+}
+
+.nav-link.active {
+    color: #212529 !important;
+    font-weight: 500;
+}
+
+.nav-link.active::after {
+    content: '';
+    position: absolute;
+    bottom: 4px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80%;
+    height: 2px;
+    background: linear-gradient(90deg, #0c1014, #46494d);
+    border-radius: 1px;
+}
+
+.nav-link:not(.active):hover::after {
+    content: '';
+    position: absolute;
+    bottom: 4px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80%;
+    height: 2px;
+    background: #dee2e6;
+    border-radius: 1px;
+    transition: width 0.3s ease;
+}
+
+.form-control:focus {
+  outline: none !important;    
+  box-shadow: none !important; 
+  border-color: #ccc;          
+}
+
+.input-group .form-control {
+  border-radius: 0;
+}
+
+.input-group .btn {
+  border-radius: 0;
+}
+
+.text-head{
+  color: #0c1014;
+}
+
+
+.custom-btn {
+  background-color: #0c1014;  /* green */
+  color: white;              /* text color */
+  border: none;
+}
+
+.custom-btn:hover {
+  background-color: #0c1014d3; /* darker on hover */
+  color: white;
+  outline: none;
+  border: none;
+}
+
+
+
+
+
+/* Login Form  */
+
+.form-container {
+  height: 65vh;             /* take full viewport height */
+  display: flex;             /* use flexbox for centering */
+  justify-content: center;   /* center horizontally */
+  align-items: center;       /* center vertically */
+}
+
+.form-container form {
+  height: 250px;
+  width: 280px;              /* form width */
+  padding: 20px;
+  background: #fff;          /* optional background */
+  border-radius: 8px;        /* optional rounded corners */
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1); /* subtle shadow */
+}
+
+.form-container .btn {
+  width: 100%;
+}
+
+/* -------------------------------------------------------------------- */
+/* Tablet and smaller screens - adjust layout but keep search */
+@media (max-width: 768px) {
+  .blog-header .row {
+    flex-wrap: wrap;
+  }
+  
+  .blog-header .col-4:first-child {
+    flex: 0 0 50%;
+    max-width: 50%;
+  }
+  
+  .blog-header .col-4:nth-child(2) {
+    flex: 0 0 100%;
+    max-width: 100%;
+    order: 3;
+    margin-top: 15px;
+  }
+  
+  .blog-header .col-4:last-child {
+    flex: 0 0 50%;
+    max-width: 50%;
+  }
+  
+  /* Adjust logo font size */
+  .blog-header-logo {
+    font-size: 1.25rem;
+  }
+  
+  /* Make buttons smaller */
+  .blog-header .btn {
+    padding: 0.25rem 0.5rem;
+    font-size: 0.875rem;
+  }
+}
+
+/* Small screens - hide search bar completely */
+@media (max-width: 576px) {
+  /* Hide the search form completely */
+  .blog-header .col-4:nth-child(2) {
+    display: none !important;
+  }
+  
+  /* Adjust layout to 2 columns */
+  .blog-header .col-4:first-child {
+    flex: 0 0 60%;
+    max-width: 60%;
+  }
+  
+  .blog-header .col-4:last-child {
+    flex: 0 0 40%;
+    max-width: 40%;
+  }
+  
+  /* Further reduce logo size */
+  .blog-header-logo {
+    font-size: 1.6rem;
+  }
+  
+  /* Make buttons even smaller */
+  .blog-header .btn {
+    padding: 0.2rem 0.4rem;
+    font-size: 0.75rem;
+  }
+}
+
+/* Extra small screens - stack vertically */
+@media (max-width: 480px) {
+  .blog-header .row {
+    flex-direction: column;
+    text-align: center;
+  }
+  
+  .blog-header .col-4:first-child,
+  .blog-header .col-4:last-child {
+    flex: 0 0 100%;
+    max-width: 100%;
+    margin-bottom: 10px;
+  }
+  
+  .blog-header .col-4:last-child {
+    margin-bottom: 0;
+  }
+  
+  /* Center the logo */
+  .blog-header .col-4:first-child {
+    text-align: center;
+  }
+  
+  /* Stack buttons vertically on very small screens */
+  .blog-header .col-4:last-child .btn {
+    display: block;
+    width: 100%;
+    margin-bottom: 5px;
+  }
+  
+  .blog-header .col-4:last-child .btn:last-child {
+    margin-bottom: 0;
+  }
+}
+
+/* Additional responsive adjustments */
+@media (max-width: 350px) {
+  .blog-header-logo {
+    font-size: 1rem;
+  }
+  
+  .blog-header .btn {
+    font-size: 0.7rem;
+    padding: 0.15rem 0.3rem;
+  }
+}
+
+
+/* Media Queries for Blog Content Responsiveness */
+
+/* Tablet screens (768px and below) */
+@media (max-width: 768px) {
+  /* Jumbotron hero section */
+  .jumbotron {
+    padding: 2rem 1.5rem !important;
+  }
+  
+  .jumbotron .display-4 {
+    font-size: 2.5rem;
+    line-height: 1.2;
+  }
+  
+  .jumbotron p {
+    font-size: 1rem;
+  }
+  
+  /* Section headings */
+  .text-head {
+    font-size: 1.75rem;
+  }
+  
+  /* Featured post cards */
+  .col-md-6 .card-body h3 {
+    font-size: 1.5rem;
+    line-height: 1.3;
+  }
+  
+  /* Recent articles */
+  .blog-main .card-body h3 {
+    font-size: 1.5rem;
+    line-height: 1.3;
+  }
+  
+  /* Sidebar */
+  .blog-sidebar {
+    margin-top: 2rem;
+  }
+  
+  .blog-sidebar h4 {
+    font-size: 1.25rem;
+  }
+  
+  .blog-sidebar p {
+    font-size: 0.95rem;
+  }
+}
+
+/* Small screens (576px and below) */
+@media (max-width: 576px) {
+  /* Jumbotron hero section */
+  .jumbotron {
+    padding: 1.5rem 1rem !important;
+    margin-bottom: 1.5rem;
+  }
+  
+  .jumbotron .display-4 {
+    font-size: 2rem;
+    line-height: 1.2;
+  }
+  
+  .jumbotron p {
+    font-size: 0.9rem;
+    line-height: 1.4;
+  }
+  
+  .jumbotron .col-md-8 {
+    padding: 0 !important;
+  }
+  
+  /* Section headings */
+  .text-head {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+  }
+  
+  /* Featured post cards */
+  .col-md-6 {
+    margin-bottom: 1rem;
+  }
+  
+  .col-md-6 .card-body h3 {
+    font-size: 1.25rem;
+    line-height: 1.3;
+  }
+  
+  .col-md-6 .card-body p {
+    font-size: 0.9rem;
+  }
+  
+  .col-md-6 .card-body small {
+    font-size: 0.75rem;
+  }
+  
+  /* Recent articles */
+  .blog-main .card-body h3 {
+    font-size: 1.25rem;
+    line-height: 1.3;
+  }
+  
+  .blog-main .card-body p {
+    font-size: 0.9rem;
+  }
+  
+  .blog-main .card-body small {
+    font-size: 0.75rem;
+  }
+  
+  /* Sidebar adjustments */
+  .blog-sidebar {
+    margin-top: 2rem;
+  }
+  
+  .blog-sidebar h4 {
+    font-size: 1.1rem;
+  }
+  
+  .blog-sidebar p {
+    font-size: 0.85rem;
+    line-height: 1.4;
+  }
+  
+  .blog-sidebar .p-3 {
+    padding: 1rem !important;
+  }
+}
+
+/* Extra small screens (480px and below) */
+@media (max-width: 480px) {
+  /* Jumbotron hero section */
+  .jumbotron {
+    padding: 1rem 0.75rem !important;
+    margin-bottom: 1rem;
+  }
+  
+  .jumbotron .display-4 {
+    font-size: 1.75rem;
+    line-height: 1.2;
+  }
+  
+  .jumbotron p {
+    font-size: 0.85rem;
+    line-height: 1.4;
+  }
+  
+  /* Section headings */
+  .text-head {
+    font-size: 1.35rem;
+    margin-bottom: 0.75rem;
+  }
+  
+  /* Featured post cards */
+  .col-md-6 .card-body {
+    padding: 1rem;
+  }
+  
+  .col-md-6 .card-body h3 {
+    font-size: 1.1rem;
+    line-height: 1.25;
+    margin-bottom: 0.5rem;
+  }
+  
+  .col-md-6 .card-body p {
+    font-size: 0.85rem;
+    margin-bottom: 0.5rem;
+  }
+  
+  .col-md-6 .card-body small {
+    font-size: 0.7rem;
+  }
+  
+  /* Recent articles */
+  .blog-main .card-body {
+    padding: 1rem;
+  }
+  
+  .blog-main .card-body h3 {
+    font-size: 1.1rem;
+    line-height: 1.25;
+    margin-bottom: 0.5rem;
+  }
+  
+  .blog-main .card-body p {
+    font-size: 0.85rem;
+    margin-bottom: 0.5rem;
+  }
+  
+  .blog-main .card-body small {
+    font-size: 0.7rem;
+  }
+  
+  /* Sidebar */
+  .blog-sidebar h4 {
+    font-size: 1rem;
+  }
+  
+  .blog-sidebar p {
+    font-size: 0.8rem;
+    line-height: 1.3;
+  }
+  
+  .blog-sidebar .p-3 {
+    padding: 0.75rem !important;
+  }
+  
+  .blog-sidebar ol li a {
+    font-size: 0.85rem;
+  }
+}
+
+/* Very small screens (350px and below) */
+@media (max-width: 350px) {
+  /* Jumbotron hero section */
+  .jumbotron .display-4 {
+    font-size: 1.5rem;
+    line-height: 1.1;
+  }
+  
+  .jumbotron p {
+    font-size: 0.8rem;
+  }
+  
+  /* Section headings */
+  .text-head {
+    font-size: 1.2rem;
+  }
+  
+  /* All card titles */
+  .card-body h3 {
+    font-size: 1rem;
+    line-height: 1.2;
+  }
+  
+  .card-body p {
+    font-size: 0.8rem;
+  }
+  
+  .card-body small {
+    font-size: 0.65rem;
+  }
+  
+  /* Sidebar */
+  .blog-sidebar h4 {
+    font-size: 0.95rem;
+  }
+  
+  .blog-sidebar p {
+    font-size: 0.75rem;
+  }
+}
+
+/* Media Queries for Navigation Scroller Font Size Only */
+
+/* Tablet screens (768px and below) */
+@media (max-width: 768px) {
+  .nav-scroller .nav-link {
+    font-size: 0.9rem;
+  }
+}
+
+/* Small screens (576px and below) */
+@media (max-width: 576px) {
+  .nav-scroller .nav-link {
+    font-size: 0.9rem;
+  }
+}
+
+/* Extra small screens (480px and below) */
+@media (max-width: 480px) {
+  .nav-scroller .nav-link {
+    font-size: 0.9rem;
+  }
+}
+
+/* Very small screens (350px and below) */
+@media (max-width: 350px) {
+  .nav-scroller .nav-link {
+    font-size: 0.8rem;
+  }
+}
+
+
+/* Media Queries for Footer Responsiveness */
+
+/* Tablet screens (768px and below) */
+@media (max-width: 768px) {
+  .footer-brand {
+    font-size: 1.5rem;
+  }
+  
+  .footer-text {
+    font-size: 0.9rem;
+  }
+  
+  .social-links span:not(.d-none) {
+    font-size: 0.85rem;
+  }
+  
+  .social-link {
+    font-size: 0.9rem;
+  }
+  
+  .social-link i {
+    font-size: 1.1rem;
+  }
+}
+
+/* Small screens (576px and below) */
+@media (max-width: 576px) {
+  .blog-footer .row {
+    text-align: center;
+  }
+  
+  .blog-footer .col-md-6:last-child {
+    justify-content: center !important;
+  }
+  
+  .footer-brand {
+    font-size: 1.2rem;
+  }
+  
+  .footer-text {
+    font-size: 1rem;
+  }
+  
+  .social-links {
+    justify-content: center;
+  }
+  
+  .social-link {
+    font-size: 0.85rem;
+  }
+  
+  .social-link i {
+    font-size: 1.6rem;
+  }
+}
+
+/* Extra small screens (480px and below) */
+@media (max-width: 480px) {
+  .footer-brand {
+    font-size: 1.1rem;
+  }
+  
+  .footer-text {
+    font-size: 0.8rem;
+  }
+  
+  .social-link {
+    font-size: 1.2rem;
+  }
+  
+  .social-link i {
+    font-size: 1.4rem;
+  }
+}
+
+/* Very small screens (350px and below) */
+@media (max-width: 350px) {
+  .footer-brand {
+    font-size: 1.1rem;
+  }
+  
+  .footer-text {
+    font-size: 0.9rem;
+  }
+  
+  .social-link {
+    font-size: 1rem;
+  }
+  
+  .social-link i {
+    font-size: 1.3rem;
+  }
+}
+
+/* Media Queries for Users Table Responsiveness */
+
+/* Tablet screens (768px and below) */
+@media (max-width: 768px) {
+  /* Page heading */
+  .col-md-9 h3 {
+    font-size: 1.5rem;
+  }
+  
+  /* Add user button */
+  .btn.float-right {
+    font-size: 0.85rem;
+    padding: 0.4rem 0.8rem;
+  }
+  
+  /* Table headers */
+  .table thead th {
+    font-size: 0.85rem;
+    padding: 0.5rem 0.3rem;
+  }
+  
+  /* Table body cells */
+  .table tbody td,
+  .table tbody th {
+    font-size: 0.8rem;
+    padding: 0.5rem 0.3rem;
+  }
+  
+  /* Icons in table */
+  .table .fa {
+    font-size: 0.9rem;
+  }
+}
+
+/* Small screens (576px and below) */
+@media (max-width: 576px) {
+  /* Page heading */
+  .col-md-9 h3 {
+    font-size: 1.3rem;
+    display: block !important;
+    margin-bottom: 0.5rem;
+  }
+  
+  /* Add user button - stack below heading */
+  .btn.float-right {
+    font-size: 0.8rem;
+    padding: 0.35rem 0.7rem;
+    float: none !important;
+    display: block;
+    width: 100%;
+    margin-bottom: 1rem;
+  }
+  
+  /* Table headers */
+  .table thead th {
+    font-size: 0.75rem;
+    padding: 0.4rem 0.2rem;
+  }
+  
+  /* Table body cells */
+  .table tbody td,
+  .table tbody th {
+    font-size: 0.7rem;
+    padding: 0.4rem 0.2rem;
+  }
+  
+  /* Icons in table */
+  .table .fa {
+    font-size: 0.8rem;
+  }
+  
+  /* Hide less important columns */
+  .table th:nth-child(6), /* Staff column */
+  .table td:nth-child(6) {
+    display: none;
+  }
+}
+
+/* Extra small screens (480px and below) */
+@media (max-width: 480px) {
+  /* Page heading */
+  .col-md-9 h3 {
+    font-size: 1.2rem;
+  }
+  
+  /* Add user button */
+  .btn.float-right {
+    font-size: 0.75rem;
+    padding: 0.3rem 0.6rem;
+  }
+  
+  /* Table headers */
+  .table thead th {
+    font-size: 0.7rem;
+    padding: 0.3rem 0.15rem;
+  }
+  
+  /* Table body cells */
+  .table tbody td,
+  .table tbody th {
+    font-size: 0.65rem;
+    padding: 0.3rem 0.15rem;
+  }
+  
+  /* Icons in table */
+  .table .fa {
+    font-size: 0.75rem;
+  }
+  
+  /* Hide additional columns for more space */
+  .table th:nth-child(5), /* Active column */
+  .table td:nth-child(5),
+  .table th:nth-child(7), /* Superuser column */
+  .table td:nth-child(7) {
+    display: none;
+  }
+}
+
+/* Very small screens (350px and below) */
+@media (max-width: 350px) {
+  /* Page heading */
+  .col-md-9 h3 {
+    font-size: 1.1rem;
+  }
+  
+  /* Add user button */
+  .btn.float-right {
+    font-size: 0.7rem;
+    padding: 0.25rem 0.5rem;
+  }
+  
+  /* Table headers */
+  .table thead th {
+    font-size: 0.65rem;
+    padding: 0.25rem 0.1rem;
+  }
+  
+  /* Table body cells */
+  .table tbody td,
+  .table tbody th {
+    font-size: 0.6rem;
+    padding: 0.25rem 0.1rem;
+  }
+  
+  /* Icons in table */
+  .table .fa {
+    font-size: 0.7rem;
+  }
+  
+  /* Show only essential columns */
+  .table th:nth-child(4), /* Email column */
+  .table td:nth-child(4) {
+    display: none;
+  }
 }

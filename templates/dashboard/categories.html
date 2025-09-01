@@ -1,14 +1,14 @@
-{% extends '..base/base.html' %}
+{% extends '../base/base.html' %}
 
 {% block content %}
-<div class="row">
+<div class="row" style="margin-top: 14px; height: 62vh;">
   <!-- left sidebar -->
   <!-- load left sidebar -->
   {% include './leftsidebar.html' %}
 
   <!-- right sidebad -->
    <div class="col-md-9">
-    <h3>All Categories</h3>
+    <h3 style="display: inline-block;">All Categories</h3>
     <a href="{% url 'add_categories' %}" class="btn btn-warning text-dark float-right mb-2">Add New Category</a>
     <table class="table table-hover">
       <thead>
@@ -38,5 +38,4 @@
    </table>
     </div>
    </div>
-</div>
 {% endblock %}

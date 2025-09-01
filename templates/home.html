@@ -1,4 +1,8 @@
-{% extends 'base/base.html' %}
+{% extends './base/base.html' %}
+
+{% block extra_header %}
+    {% include './base/cat.html' %}
+{% endblock %}
     
 {% block content %}
 
@@ -6,23 +10,23 @@
  {% if forloop.first %}
 <div class="jumbotron p-3 p-md-5 text-white rounded bg-dark" style="background-image: url('{{ post.blog_image.url }}');background-blend-mode: overlay;background-size:cover;">
     <div class="col-md-8 px-0">
-      <h1 class="display-4 font-italic"><a href="{% url 'blogs' post.slug %}">{{ post.title }}</a></h1>
-      <p class="lead my-3">{{ post.short_description | truncatewords:25}}</p>
-      <p class="lead mb-0"><a href="#" class="text-white font-weight-bold">Continue reading...</a></p>
+      <h1 class="display-4 font-italic"><a href="{% url 'blogs' post.slug %}" style="color: rgba(255,255,255,0.8); text-decoration: none;">{{ post.title }}</a></h1>
+      <p class="my-3"  style="color: rgba(255, 255, 255, 0.913);">{{ post.short_description | truncatewords:25}}</p>
+      <p class=""><a href="{% url 'blogs' post.slug %}"  class="text-white" style="color: rgba(198, 195, 195, 0.8); text-decoration: none;">Continue reading...</a></p>
     </div>
   </div>
  {% endif %}
 {% endfor %}
 
-<h3 class="text-uppercase text-warning" style="letter-spacing: 2px;">Featured Post</h3>
+<h3 class="text-head">Featured Post</h3>
   <div class="row mb-2">
     {% for post in featured_post %}
       {% if not forloop.first %}
     <div class="col-md-6">
-      <div class="card border-0" >
-        <div class="card-body">
-          <h3><a href="{% url 'blogs' post.slug %}">{{ post.title }}</a></h3>
-          <small class="mb-1 text-muted">{{ post.created_at|timesince }} ago|{{ post.author }}</small>
+      <div class="card border-0" style="margin: 14px 10px;" >
+        <div>
+          <h4><a href="{% url 'blogs' post.slug %}" style="text-decoration: none;">{{ post.title }}</a></h4>
+          <small class="mb-1 text-muted">{{ post.created_at | timesince }} ago | {{ post.author }}</small>
          <p class="card-text">{{ post.short_description|truncatewords:30 }}</p>
         </div>
       </div>
@@ -32,16 +36,16 @@
   </div>
 <!-- Recent Articles -->
 
-<h3 class="text-uppercase text-warning" style="letter-spacing: 2px;">Recent Articles</h3>
+<h3 class="text-head">Recent Articles</h3>
   <main role="main" class="container p-0">
     <div class="row">
       <div class="col-md-8 blog-main">
        {% for post in posts %} 
-      <div class="card border-0" >
-        <div class="card-body">
-          <h3><a href="{% url 'blogs' post.slug %}">{{ post.title }}</a></h3>
-          <small class="mb-1 text-muted">{{ post.created_at|timesince }} ago|{{ post.author }}</small>
-          <p class="card-text">{{ post.short_description|truncatewords:20 }}</p>
+      <div class="card border-0" style="margin: 14px 10px;">
+        <div>
+          <h4><a href="{% url 'blogs' post.slug %}">{{ post.title }}</a></h4>
+          <small class="mb-1 text-muted">{{ post.created_at | timesince }} ago | {{ post.author }}</small>
+          <p class="card-text">{{ post.short_description | truncatewords:20 }}</p>
         </div>
       </div>
       {% endfor %}
@@ -52,8 +56,8 @@
 
       <aside class="col-md-4 blog-sidebar">
         <div class="p-3 mb-3 bg-light rounded">
-          <h4 class="font-italic">About</h4>
-          <p class="mb-0">Etiam porta <em>sem malesuada magna</em> mollis euismod. Cras mattis consectetur purus sit amet fermentum. Aenean lacinia bibendum nulla sed consectetur.</p>
+          <h4 class="font-italic">Welcome Traveler,</h4>
+          <p class="mb-0">This is a sanctuary for all who wander and wonder. We're not about dusty tomes or ancient prophecies — this is a living chronicle of the here and now, a fellowship for everyone from the quiet hobbits to the wise elves.</p>
         </div>
 
         <div class="p-3">
@@ -68,7 +72,5 @@
     </div><!-- /.row -->
 
   </main><!-- /.container -->
-
-</div>
 
 {% endblock %}

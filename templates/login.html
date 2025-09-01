@@ -2,9 +2,11 @@
 
 {% block content %}
 {% load crispy_forms_tags %}
-<form action="{% url 'login' %}" method="POST" style="height:300px; width:400px; margin: auto;">
-{% csrf_token %}
-{{ form | crispy }}
-<input type="submit" name="Login" class="btn btn-warning">
-</form>
+<div class="form-container">
+  <form action="{% url 'login' %}" method="POST">
+    {% csrf_token %}
+    {{ form|crispy }}
+    <input type="submit" value="Login" class="btn custom-btn w-100">
+  </form>
+</div>
 {% endblock %}

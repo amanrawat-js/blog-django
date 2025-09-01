@@ -6,43 +6,37 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Blogspot</title>
+    <link rel="icon" type="image/png" sizes="180x180" href="{% static 'images/Story.png' %}">
     <link href="https://getbootstrap.com/docs/4.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Playfair+Display:700,900" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
     <link href="{% static 'css/blog.css' %}" rel="stylesheet">
-  </head>
+</head>
 <body>
     <div class="container">
       <header class="blog-header py-3">
         <div class="row flex-nowrap justify-content-between align-items-center">
           <div class="col-4 pt-1">
-            <a class="blog-header-logo text-dark" href="/">Django Blog</a>
+            <a class="blog-header-logo text-dark" href="/">Story Loom</a>
           </div>
           <div class="col-4">
             <form action="{% url 'search' %}" method="GET">
-               <div class="input-group">
-                        <input class="form-control" name="keyword" type="text" placeholder="Enter search term..." aria-label="Enter search term..." aria-describedby="button-search" />
-                        <button type="submit" class="btn btn-warning" id="button-search" type="button">Go!</button>
-                </div> 
+             <div class="input-group">
+            <input class="form-control no-radius" name="keyword" type="text" placeholder="Enter search term..." aria-label="Enter search term..." aria-describedby="button-search" />
+            <button type="submit" class="btn custom-btn no-radius" id="button-search">Go!</button>
+            </div>
             </form>
           </div>
           <div class="col-4 d-flex justify-content-end align-items-center">
             {% if not user.is_authenticated %}
-            <a class="btn btn-sm btn-warning" href="{% url 'login' %}">Login</a> &nbsp;
-            <a class="btn btn-sm btn-outline-secondary" href="{% url 'register' %}">Register</a>
+            <a class="btn custom-btn" href="{% url 'login' %}">Login</a> &nbsp;
+            <a class="btn btn-outline-secondary" href="{% url 'register' %}">Register</a>
             {% else %}
             <!-- <span>{{ user }}</span>&nbsp; -->
-            <a class="btn btn-sm btn-warning" href="{% url 'dashboard' %}">Dashboard</a> &nbsp;
-            <a class="btn btn-sm btn-outline-secondary" href="{% url 'logout' %}">Logout</a>
+            <a class="btn custom-btn" href="{% url 'dashboard' %}">Dashboard</a> &nbsp;
+            <a class="btn btn-outline-secondary" href="{% url 'logout' %}">Logout</a>
             {% endif %}
           </div>
         </div>
       </header>
 
-      <div class="nav-scroller py-1 mb-2">
-        <nav class="nav d-flex justify-content-between">
-          {% for cat in categories %}
-          <a class="p-2 text-muted" href="{% url 'posts_by_category' cat.id %}">{{ cat.category_name }}</a>
-          {% endfor %}
-        </nav>
-      </div>
