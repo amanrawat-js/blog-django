@@ -75,7 +75,7 @@ h6 {
  */
 
 .blog-footer {
-  padding: 2.5rem 0;
+  padding: 2.1rem 0;
   color: #727272;
   background-color: #f9f9f9;
   border-top: .05rem solid #e5e5e5;
@@ -93,7 +93,7 @@ h6 {
 }
 
 .footer-brand:hover {
-  color: #e9ecef;
+  color: #142639bc;
   text-decoration: none;
 }
 
@@ -115,8 +115,8 @@ h6 {
 }
 
 .social-link:hover {
-  color: #ffffff;
-  background-color: #495057;
+  color: #375868;
+  /* background-color: #495057; */
   text-decoration: none;
 }
 

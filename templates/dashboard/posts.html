@@ -27,10 +27,10 @@
     <tr>
       <th>{{ forloop.counter }}</th>
       <td>{{ post.title }}</td>
-      <td>{{ post.category_name }}</td>
+      <td>{{ post.category }}</td>
       <td>{{ post.author }}</td>
       <td>{{ post.status }}</td>
-      <td>{% if post.is_featured %}<i class="fa fa-check text-success"></i>{% else %}<i class="fa fa-times text-danger"></i>{% endif %}</td>
+      <td style="display: flex; justify-content: center;">{% if post.is_featured %}<i class="fa fa-check text-success"></i>{% else %}<i class="fa fa-times text-danger"></i>{% endif %}</td>
       <td>
         <a href="{% url 'edit_posts' post.id %}"><i class="fa fa-edit text-success"></i></a> &nbsp;&nbsp;
         <a href="{% url 'delete_posts' post.id %}"><i class="fa fa-trash text-danger"></i></a> 
