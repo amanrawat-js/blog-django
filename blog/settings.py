@@ -24,7 +24,7 @@ STATIC_DIR = os.path.join(BASE_DIR, 'static')
 SECRET_KEY = 'django-insecure-7tna-lukv1o)(hlh=!k4ue%6u@zl2x6c9^7&4zxvgg$*(8vo%6'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ['*']
 
@@ -46,6 +46,7 @@ INSTALLED_APPS = [
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware', 
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
@@ -119,10 +120,9 @@ USE_TZ = True
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/5.2/howto/static-files/
-STATIC_URL = 'static/'
-STATICFILES_DIRS = [
-  STATIC_DIR
-]
+STATIC_URL = '/static/'
+STATICFILES_DIRS = [STATIC_DIR]
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.2/ref/settings/#default-auto-field
@@ -143,3 +143,6 @@ MESSAGE_TAGS = {
     messages.WARNING: 'warning',
     messages.INFO: 'info',
 }
+
+
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
