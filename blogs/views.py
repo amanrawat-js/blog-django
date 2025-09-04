@@ -8,7 +8,6 @@ def posts_by_category(request, category_id):
     try:
         posts = Blogs.objects.filter(category=category_id, status='published')
         category = get_object_or_404(Category, pk=category_id)
-        
         context = {
             'posts': posts,
             'category': category,

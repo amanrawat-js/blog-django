@@ -16,12 +16,12 @@
                     <a class="badge bg-primary text-decoration-none text-light" href="#!">{{ single_post.category }}</a>
                 </header>
                 <!-- Preview image figure-->
-                <figure class="mb-4"><img class="img-fluid rounded" src="{{ single_post.blog_image.url }}" alt="..." /></figure>
+                <figure class="mb-4"><img id="blog-image" class="img-fluid rounded" src="{{ single_post.blog_image.url }}" alt="..." onload="this.classList.add('fade-in');" /></figure>
                 <!-- Post content-->
                 <section class="mb-5">
                     <p class="fs-5 mb-4">{{ single_post.short_description }}</p>
                     <p class="fs-5 mb-4">{{ single_post.blog_body}}</p>
-                    <h4>Comments ({{ comment_count }})</h4>
+                    <h5>Comments ({{ comment_count }})</h5>
                     {% if comments %}
                      {% for comment in comments %}
                         <div class="card-body">
@@ -75,10 +75,13 @@
             <!-- Side widget-->
             <div class="card mb-4 p-3">
                 <h4 class="font-italic">Follow Us</h4>
-                <ol class="list-unstyled">
-                    <li><a href="#">GitHub</a></li>
-                    <li><a href="#">LinkedIn</a></li>
-                </ol>
+                <div class="col-sm-6">
+                    <ul class="list-unstyled">
+                    <li><a href="https://github.com/amanrawat-js" target="_blank">GitHub</a></li>
+                    <li><a href="https://linkedin.com/in/amanrawat1" target="_blank">LinkedIn</a></li>
+                </ul>
+                </div>
+               
             </div>
         </div>
     </div>

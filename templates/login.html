@@ -2,11 +2,13 @@
 
 {% block content %}
 {% load crispy_forms_tags %}
-<div class="form-container">
-  <form action="{% url 'login' %}" method="POST">
+<div style="display: flex; justify-content: center; align-items: center; height: 440px;">
+  <form action="{% url 'login' %}" method="POST" style="width: 350px; padding: 20px; border: 1px solid #ccc; border-radius: 8px; background-color: #f9f9f9;">
     {% csrf_token %}
-    {{ form|crispy }}
-    <input type="submit" value="Login" class="btn custom-btn w-100">
+    {{ form | crispy }}
+    <input type="submit" value="Login" style="width: 100%; padding: 10px; margin-top: 10px; background-color: #0c1014; color: white; border: none; border-radius: 4px; cursor: pointer; font-size: 14px;">
   </form>
 </div>
 {% endblock %}
+
+

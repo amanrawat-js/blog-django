@@ -4,6 +4,13 @@
 @import url('https://fonts.googleapis.com/css2?family=Merriweather:ital,opsz,wght@0,18..144,300..900;1,18..144,300..900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap');
 
+
+::selection {
+  background-color: #000000; /* Black background */
+  color: #ffffff; /* White text */
+  }
+
+  
 .blog-header {
   border-bottom: 1px solid #e5e5e5;
 }
@@ -221,26 +228,7 @@ h6 {
 
 
 /* Login Form  */
-
-.form-container {
-  height: 65vh;             /* take full viewport height */
-  display: flex;             /* use flexbox for centering */
-  justify-content: center;   /* center horizontally */
-  align-items: center;       /* center vertically */
-}
-
-.form-container form {
-  height: 250px;
-  width: 280px;              /* form width */
-  padding: 20px;
-  background: #fff;          /* optional background */
-  border-radius: 8px;        /* optional rounded corners */
-  box-shadow: 0 4px 10px rgba(0,0,0,0.1); /* subtle shadow */
-}
-
-.form-container .btn {
-  width: 100%;
-}
+/* Login Form  */
 
 /* -------------------------------------------------------------------- */
 /* Tablet and smaller screens - adjust layout but keep search */
@@ -887,4 +875,15 @@ h6 {
   .table td:nth-child(4) {
     display: none;
   }
+}
+
+/* On Load Image */
+
+.img-fluid.rounded {
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out;
+}
+
+.img-fluid.rounded.fade-in {
+  opacity: 1;
 }
