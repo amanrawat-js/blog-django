@@ -17,6 +17,7 @@ urlpatterns = [
     path('dashboard/', include('dashboards.urls'))
 ]
 
+# Only serve media files from Django in development
 if settings.DEBUG:
     urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_DIR)
     urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

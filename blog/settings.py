@@ -10,10 +10,8 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/5.2/ref/settings/
 """
 import os
-from django.contrib.messages import constants as messages
 from pathlib import Path
 # from dotenv import load_dotenv
-
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -26,7 +24,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-7tna-lukv1o)(hlh=!k4ue%6u@zl2x6c9^7&4zxvgg$*(8vo%6'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 ALLOWED_HOSTS = ['*']
 
 
@@ -52,7 +50,7 @@ INSTALLED_APPS = [
 #     'API_KEY': os.getenv('CLOUDINARY_API_KEY'),
 #     'API_SECRET': os.getenv('CLOUDINARY_API_SECRET'),
 # }
-# DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
+# DEFAULT_FILE_STORAGE = 'blog.custom_storage.CloudinaryStorage'
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -143,18 +141,12 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 # # Media Files Configuration 
 
-MEDIA_URL = '/media/'
-MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+if DEBUG:
+    MEDIA_URL = "/media/"
+    MEDIA_ROOT = BASE_DIR / "media"
 
 # crispy forms
 
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
-
-MESSAGE_TAGS = {
-    messages.ERROR: 'danger',
-    messages.SUCCESS: 'success',
-    messages.WARNING: 'warning',
-    messages.INFO: 'info',
-}
 
 
